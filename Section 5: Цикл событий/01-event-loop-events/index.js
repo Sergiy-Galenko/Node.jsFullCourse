@@ -1,31 +1,31 @@
 const fs = require('fs');
 const dns = require('dns');
 
-function timestamp() {
-    return performance.now().toFixed(2);
+function info(text) {
+    console.log(text, performance.now().toFixed(2));
 }
 
 console.log('Program start');
 
-setTimeout(() => console.log('Timeout 1', timestamp()), 0);
+setTimeout(() => info('Timeout 1'), 0);
 
 setTimeout(() => {
-    process.nextTick(() => console.log('Next tick 2', timestamp()))
-    console.log('Timeout 2', timestamp())
+    process.nextTick(() => info('Next tick 2'))
+    info('Timeout 2')
 }, 10);
 
-fs.writeFile('./test.txt', 'Hello Node.js', () => console.log('File written'));
+fs.writeFile('./test.txt', 'Hello Node.js', () => info('File written'));
 
-Promise.resolve().then(() => console.log('Promise 1', timestamp()));
+Promise.resolve().then(() => info('Promise 1'));
 
-process.nextTick(() => console.log('Next tick 1'));
+process.nextTick(() => info('Next tick 1'));
 
-setImmediate(() => console.log('Immediate 1', timestamp()));
+setImmediate(() => info('Immediate 1'));
 
 //interval
 let intervalCount = 1;
 const intervalID = setInterval(() => {
-    console.log(`Interval ${intervalCount +=1 }`, timestamp())
+    info(`Interval ${intervalCount +=1 }`)
     if(intervalCount === 2) clearInterval(intervalID)
 }, 10)
 
@@ -33,9 +33,9 @@ const intervalID = setInterval(() => {
 
 // I/O Events
 dns.lookup('google.com', (err, address, family) => {
-    console.log('DNS 1 google.com', address, timestamp());
-    Promise.resolve().then(() => console.log('Promise 2', timestamp()));
-    process.nextTick(() => console.log('Next tick 3', timestamp()));
+    info('DNS 1 google.com', address);
+    Promise.resolve().then(() => info('Promise 2'));
+    process.nextTick(() => info('Next tick 3'));
 })
 
 console.log('Program end');
