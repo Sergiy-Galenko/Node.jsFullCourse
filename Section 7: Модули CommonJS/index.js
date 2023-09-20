@@ -1,4 +1,5 @@
 const exportedObject = require("./multiple-export");
+const { myName: myOtherName, myFriendsName } = require("./export-and-import");
 const { myName, myHobies, myFavoritNumber } = exportedObject;
 const greetingFn = require("./singl-export");
 // DON`T USE ABSOLUTE PATHS
@@ -8,5 +9,7 @@ console.log(exportedObject);
 console.log(myName);
 console.log(myHobies);
 console.log(myFavoritNumber);
-
 greetingFn(myName);
+
+console.log(myOtherName);
+console.log(myFriendsName);
