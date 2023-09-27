@@ -1,0 +1,6 @@
+Часто используимые модули в node.js
+1) fs 
+2) events
+3) path
+4) http
+5) stream
