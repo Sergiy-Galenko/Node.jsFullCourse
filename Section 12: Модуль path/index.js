@@ -17,3 +17,10 @@ console.log(path.dirname(filePath)); // //Users/sergejgalenko/Documents/GitHub/N
 console.log(path.dirname(directoryPath)); // ./node
 
 console.log(path.resolve(filePath)); ///Users/sergejgalenko/Documents/GitHub/Node.jsFullCourse/Section 12: Модуль path
+
+console.log(path.extname(textFilePath)); // file.(розширення файла) або пустий раядок ''
+
+console.log(path.parse(filePath)); //{ root: '/', dir: '//Users/sergejgalenko/Documents/GitHub/Node.jsFullCourse', base: 'Section 12: Модуль path', ext: '', name: 'Section 12: Модуль path' }
+
+const parsePath = path.parse(filePath);
+console.log(path.join(parsePath.dir, `rename-${parsePath.name}.mjs`)); /// Users/sergejgalenko/Documents/GitHub/Node.jsFullCourse/rename-Section 12: Модуль path.mjs
