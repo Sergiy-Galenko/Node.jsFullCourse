@@ -17,6 +17,9 @@ const server = http.createServer((req, res) => {
     if ((req.method = "GET" && req.url === "/comments")) {
         return getCOMMENTS(req, res);
     }
+    if ((req.method = "POST" && req.url === "/comments")) {
+        return getCOMMENTS(req, res);
+    }
     hendelNotFoundel(req, res);
 });
 

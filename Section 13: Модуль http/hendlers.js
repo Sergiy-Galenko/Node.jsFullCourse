@@ -21,6 +21,19 @@ function getCOMMENTS(req, res) {
     return res.end(JSON.stringify(comments));
 }
 
+function postCOMMENTS(req, res) {
+    let commentJSON = "";
+
+    req.on("data", (chunk) => (commentJSON += chunk));
+
+    req.on("end", () => {
+        comments.push(JSON.parse(commentJSON));
+        console.log(commentJSON);
+        res.statusCode = 200;
+        res.end("Comment data was received");
+    });
+}
+
 function hendelNotFoundel(req, res) {
     res.statusCode = 404;
     res.setHeader("Content-Type", "text/html");
@@ -37,4 +50,5 @@ module.exports = {
     getAdmin,
     getCOMMENTS,
     hendelNotFoundel,
+    postCOMMENTS,
 };
