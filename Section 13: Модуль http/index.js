@@ -4,10 +4,14 @@ const {
     getAdmin,
     getHTML,
     getCOMMENTS,
-    hendelNotFoundel,
+    handleNotFound,
+    getHome,
 } = require("./hendlers");
 
 const server = http.createServer((req, res) => {
+    if (req.method === "GET" && req.url === "/") {
+        return getHome(req, res);
+    }
     if ((req.method = "GET" && req.url === "/http")) {
         return getHTML(req, res);
     }
@@ -20,7 +24,7 @@ const server = http.createServer((req, res) => {
     if ((req.method = "POST" && req.url === "/comments")) {
         return getCOMMENTS(req, res);
     }
-    hendelNotFoundel(req, res);
+    handleNotFound(req, res);
 });
 
 server.listen(PORT, () => {
