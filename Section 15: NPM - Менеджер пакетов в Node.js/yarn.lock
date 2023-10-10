@@ -380,6 +380,11 @@ isarray@~1.0.0:
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
   integrity sha512-VLghIWNM6ELQzo7zwmcg0NmTVyWKYjvIeM83yjp0wRDTmUnrM678fQbcKBo6n2CJEF0szoG//ytg+TKla89ALQ==
 
+just@^0.1.8:
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/just/-/just-0.1.8.tgz#eb4564b992157c014a54bcdf322ec49fd02583f1"
+  integrity sha512-MthnDq23szARlHgY638t17BLLWa/4S8NbN6LlUzSGzG7hKLlC2M+gzd4rxcSixOlM530LnsRgbe10b2/EPbsQg==
+
 lru-cache@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
