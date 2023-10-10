@@ -1,0 +1,33 @@
+\[
+\begin{array}{|l|l|}
+\hline
+\textbf{Команда} & \textbf{Опис} \\
+\hline
+\texttt{git init} & Ініціалізує новий репозиторій Git в поточній директорії. \\
+\hline
+\texttt{git clone [url]} & Клонує репозиторій з вказаної URL-адреси. \\
+\hline
+\texttt{git status} & Показує стан файлів у репозиторії (змінені, незбережені тощо). \\
+\hline
+\texttt{git add [file/folder]} & Додає файли або директорії до індексу для подальшого коміту. \\
+\hline
+\texttt{git commit -m "message"} & Зберігає зміни в репозиторії з вказаним повідомленням коміту. \\
+\hline
+\texttt{git log} & Показує історію комітів. \\
+\hline
+\texttt{git pull [remote] [branch]} & Завантажує зміни з вказаного віддаленого репозиторію та гілки. \\
+\hline
+\texttt{git push [remote] [branch]} & Відправляє зміни до вказаного віддаленого репозиторію та гілки. \\
+\hline
+\texttt{git checkout [branch]} & Переключається на вказану гілку. \\
+\hline
+\texttt{git branch} & Показує список локальних гілок. \\
+\hline
+\texttt{git branch -d [branch]} & Видаляє вказану гілку. \\
+\hline
+\texttt{git merge [branch]} & Об'єднує вказану гілку з поточною гілкою. \\
+\hline
+\texttt{git remote add [name] [url]} & Додає новий віддалений репозиторій з вказаним ім'ям та URL-адресою. \\
+\hline
+\end{array}
+\]
