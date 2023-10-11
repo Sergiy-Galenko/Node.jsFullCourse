@@ -1,7 +1,9 @@
 const express = require("express");
 const PORT = 3000;
 const app = express();
-const getRootHendler = (req, res, next) => console.log("first hendler");
+const userRouter = require("./routes/user");
+
+
 const getCommentsHendler = (req, res) => {
     res.send("Get commetns route");
 };
@@ -18,5 +20,5 @@ app.get("/comments", getCommentsHendler);
 app.post("/comments", postCommentsHendler);
 app.get("/comments/:commentId", getCommentsHendlers);
 app.route("/comments").get(getCommentsHendler).post(postCommentsHendler);
-
+app.use("/user", userRouter);
 app.listen(PORT, () => console.log(`Server starting for in port ${PORT}`));
