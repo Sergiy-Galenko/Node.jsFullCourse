@@ -1,15 +1,18 @@
 import express from "express";
-
+import morgan from "morgan";
 const PORT = 3000;
 
 const app = express();
 
-const logger = (req, res, next) => {
-    console.log(req.method, req.path);
-    next();
-};
-
 //app.use(logger);
-app.use(logger, (req, res) => res.send("This is expess server"));
+// app.use(morgan("combined"));
+app.use(morgan("tiny"));
+app.use((req, res, next) => {
+    let data = "";
+    req.on("data", (chunk) => (data += chunk));
+    req.on("end", () => console.log(JSON.parse(data)));
+    next();
+});
+app.use((req, res) => res.send("This is expess server"));
 
 app.listen(PORT, () => console.log(`Starting server in port ${PORT}`));
